@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<locale.h>
+void main()
+{
+	while (1)
+	{
+		char a;
+		setlocale(LC_ALL, "RUS");
+		puts("Задание 2");
+		int count = 0;
+		printf("Введите число =");
+		int test;
+		scanf("%d", &test);
+		while (test > 0)
+		{
+			int temp = (test % 10) % 2;
+			if (temp == 0)
+				count++;
+			test = test / 10;
+		}
+		printf("Счетчик %d", count);
+		printf("\n");
+		printf("Продолжить? (Да-y, нет-n)");
+		if ((a = getchar()) == 'n')break;
+		printf("\n");
+	}
+}
