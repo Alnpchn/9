@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<locale.h>
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+    while (1) {
+        char symb;
+        int a;
+        int h;
+        printf("введите символ: ");
+        scanf("%c", &symb);
+        printf("введите длину стороны: ");
+        scanf("%d", &a);
+        printf("введите высоту параллелограмма: ");
+        scanf("%d", &h);
+        int k_p = 0;
+        for (int i = 0; i < h; i++) {
+            for (int s = 0; s < k_p; s++) 
+            {
+                printf("%s", " ");
+            }
+            for (int z = 0; z < a; z++) 
+            {
+                printf("%c", symb);
+
+            }
+            k_p += 1;
+            printf("\n");
+        }
+        printf("Продолжить? (Да - y, нет -n)");
+        if ((a = getchar()) == 'n') 
+            break;
+    }
+    return 0;
+}
+
